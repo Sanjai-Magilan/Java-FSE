@@ -1,4 +1,4 @@
-package SingletonPatternExample;
+package Module1.SingletonPatternExample;
 
 class Logger{
 
@@ -13,13 +13,13 @@ class Logger{
         return instance;
     }
 
-    public static void PrintLog(String log){
+    public void PrintLog(String log){
         System.out.println("Log : "+log);
     }
 }
 
 
-public class single {
+public class Singleton {
     public static void main(String[] args) {
         Logger L1 = Logger.getInstance();
         L1.PrintLog("Application is running");
