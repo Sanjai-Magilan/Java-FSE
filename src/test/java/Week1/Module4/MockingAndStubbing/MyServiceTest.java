@@ -11,6 +11,8 @@ public class MyServiceTest {
         // Create mock
         ExternalApi mockApi = mock(ExternalApi.class);
 
+        doNothing().when(mockApi).saveData();
+
         // Stub method
         when(mockApi.getData()).thenReturn("Mock Data");
 
@@ -19,8 +21,10 @@ public class MyServiceTest {
 
         // Act
         String result = service.fetchData();
+        service.storeData();
 
         // Assert
-        assertEquals("Mock Data",result);
+        assertEquals("Mock Data", result);
+        verify(mockApi).saveData(); // Exercise 4
     }
 }

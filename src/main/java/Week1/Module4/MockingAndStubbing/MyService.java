@@ -10,4 +10,8 @@ public class MyService {
     public String fetchData() {
         return api.getData();
     }
+
+    public void storeData() {
+        api.saveData();
+    }
 }
